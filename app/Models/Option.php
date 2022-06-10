@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Option extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'amount_of_votes'
+    ];
 
     public function survey()
     {

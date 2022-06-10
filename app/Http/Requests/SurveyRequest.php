@@ -25,8 +25,11 @@ class SurveyRequest extends FormRequest
     public function rules()
     {
         return [
-            'header.*' => ['required'],
-            'options' => [new MinOptionsRule()]
+            'header.title' => ['required', 'string'],
+            'header.begins_in' => ['required', 'date'],
+            'header.expires_in' => ['required', 'date', 'after:header.begins_in'],
+            'options.*.name' => ['required', 'string'],
+            'options' => [new MinOptionsRule()],
         ];
     }
 }

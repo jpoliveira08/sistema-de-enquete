@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Survey;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,8 +27,8 @@ class SurveyFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'begins_in' => $this->faker->date('Y-m-d H:i:s'),
-            'expires_in' => $this->faker->date('Y-m-d H:i:s')
+            'begins_in' => Carbon::now()->toDateTimeString(),
+            'expires_in' => Carbon::now()->addHour()->toDateTimeString()
         ];
     }
 }

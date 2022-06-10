@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('surveys_id')->constrained()
+            $table->foreignId('survey_id')->constrained()
                 ->onDelete('cascade');
             $table->string('name');
             $table->unsignedBigInteger('amount_of_votes');
