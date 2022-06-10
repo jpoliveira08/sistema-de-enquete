@@ -11,6 +11,6 @@ class SurveyRepository implements SurveyRepositoryInterface
 {
     public function createSurvey(array $survey)
     {
-        return Survey::create($survey);
+        return Survey::create($survey['header']);
     }
 }

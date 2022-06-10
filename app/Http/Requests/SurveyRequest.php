@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MinOptionsRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SurveyRequest extends FormRequest
@@ -24,7 +25,8 @@ class SurveyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'header.*' => ['required'],
+            'options' => [new MinOptionsRule()]
         ];
     }
 }
