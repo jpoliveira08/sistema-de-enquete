@@ -8,6 +8,11 @@
     transition-duration: 0.2s;
 }
 
+a.btn {
+    text-decoration: none;
+    color: inherit;
+}
+
 .btn-primary {
     background: #8ecae6;
 }

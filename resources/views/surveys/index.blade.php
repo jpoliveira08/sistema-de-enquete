@@ -1,16 +1,15 @@
 <x-layout title="Enquetes">
-
-    <div class="container center">
+    <div class="page-header">
         <h1>Enquetes</h1>
     </div>
 
-    <div class="container space-around">
-        <a href="" class="btn btn-primary">Nova enquete</a>
-
+    <div class="action-buttons">
+        <a href="{{ route('surveys.create') }}" class="btn btn-primary">Nova enquete</a>
+    
         <a href="" class="btn btn-info">Filtrar</a>
     </div>
-    
-    <div class="container column">
+
+    <div class="surveys-table">
         <table>
             <thead>
                 <tr>
@@ -23,8 +22,11 @@
             <tbody>
                 @foreach($surveys as $survey)
                 <tr>
-                    <td class="column-title">{{ $survey->title }}</td>
+                    <td class="column-title">
+                        <a href="">{{ $survey->title }}</a>
+                    </td>
                     <td>{{ $survey->begins_in }}</td>
+
                     <td>{{ $survey->expires_in }}</td>
                     <td>
                         <a class="btn btn-warning" href="">Editar</a>
@@ -35,5 +37,6 @@
             </tbody>
         </table>
     </div>
-
 </x-layout>
+
+<script src="{{ asset('js/surveys/index.js')}}"></script>

@@ -10,8 +10,8 @@
     <title>{{ $title }}</title>
 </head>
 <body>
-    {{ $slot }}
+    <main>
+        {{ $slot }}
+    </main>
 </body>
 </html>
-
-<script src="{{ asset('js/surveys/index.js')}}"></script>

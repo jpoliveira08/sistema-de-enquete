@@ -1,13 +1,31 @@
 table {
     margin-top: 20px;
+    width: 100%;
 }
 
-tbody td {
+th, td{
+    padding: 10px;
     text-align: center;
+}
+
+td a {
+    display:block;
+    text-decoration: none;
+    color: inherit;
+}
+
+td a:hover {
+    background: #FFEFBA;
 }
 
 .column-title {
     word-wrap: break-word;
-    max-width: 300px;
     text-align: justify;
+    max-width: 300px;
+}
+
+.surveys-table {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }

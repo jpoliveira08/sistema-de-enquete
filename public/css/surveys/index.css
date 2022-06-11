@@ -4,38 +4,39 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-	max-width: 1100px;
-	margin: 0 auto;
-	display: flex;
-	background-color: white;
-	border-color: #cb997e;
-	border-style: none solid none solid;
+button {
+	border: none;
+	cursor: pointer;
 }
 
-.center {
+main {
+	margin: 0 auto;
+	max-width: 1100px;
+	height: 100vh;
+	background: white;
+	border-style: none solid;
+	border-color: black;
+}
+
+.form-box {
+	padding: 10px 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-box-buttons {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.page-header {
+	display: flex;
 	justify-content: center;
 }
 
-.column {
-    flex-direction: column;
-}
-
-.flex-start {
-	justify-content: flex-start;
-}
-
-.space-between {
-	justify-content: space-between;
-}
-
-.space-around {
+.action-buttons {
+	display: flex;
 	justify-content: space-around;
 }
 
-.container-list {
-	max-width: 650px;
-	margin: 0 auto;
-	display: flex;
-	background-color: #005f73;
-}

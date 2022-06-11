@@ -29,4 +29,9 @@ class SurveyController extends Controller
         return view('surveys.index')
             ->with('surveys', $this->surveyRepository->getAllSurveys());
     }
+
+    public function create()
+    {
+        return view('surveys.create');
+    }
 }
