@@ -1,0 +1,45 @@
+.btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+}
+
+.btn-primary {
+    background: #8ecae6;
+}
+
+.btn-primary:hover {
+    background: #219ebc;
+}
+
+.btn-success {
+    background: #74c69d;
+}
+
+.btn-success:hover {
+    background: #40916c;
+}
+
+.btn-danger {
+    background: #EF233C;
+}
+
+.btn-danger:hover {
+    background: #D90429;
+}
+
+.btn-warning {
+    background: #EE9B00;
+}
+
+.btn-warning:hover {
+    background: #CA6702;
+}
+
+.btn-info {
+    background: #8d99ae;
+}

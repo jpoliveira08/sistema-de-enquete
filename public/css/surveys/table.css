@@ -1,0 +1,13 @@
+table {
+    margin-top: 20px;
+}
+
+tbody td {
+    text-align: center;
+}
+
+.column-title {
+    word-wrap: break-word;
+    max-width: 300px;
+    text-align: justify;
+}
