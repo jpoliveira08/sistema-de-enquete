@@ -23,4 +23,10 @@ class SurveyController extends Controller
 
         return response()->json(['message' => 'Survey created'], 201);
     }
+
+    public function index()
+    {
+        return view('surveys.index')
+            ->with('surveys', $this->surveyRepository->getAllSurveys());
+    }
 }

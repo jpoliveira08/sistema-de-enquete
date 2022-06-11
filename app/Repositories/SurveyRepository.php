@@ -7,7 +7,6 @@ namespace App\Repositories;
 use App\Interfaces\SurveyRepositoryInterface;
 use App\Models\Option;
 use App\Models\Survey;
-use Illuminate\Support\Facades\Log;
 
 class SurveyRepository implements SurveyRepositoryInterface
 {
@@ -22,5 +21,10 @@ class SurveyRepository implements SurveyRepositoryInterface
         Option::insert($options);
 
         return $survey;
+    }
+
+    public function getAllSurveys()
+    {
+        return Survey::all();
     }
 }
