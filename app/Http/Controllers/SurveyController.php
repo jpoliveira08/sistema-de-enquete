@@ -17,11 +17,11 @@ class SurveyController extends Controller
         $this->surveyRepository = $surveyRepository;
     }
 
-    public function store(SurveyRequest $request): JsonResponse
+    public function store(SurveyRequest $request)
     {
         $this->surveyRepository->createSurvey($request->all());
 
-        return response()->json(['message' => 'Survey created'], 201);
+        return redirect('surveys');
     }
 
     public function index()

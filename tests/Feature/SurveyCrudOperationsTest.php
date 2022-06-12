@@ -29,6 +29,8 @@ class SurveyCrudOperationsTest extends TestCase
             $this->assertInstanceOf(Option::class, $option);
         }
 
-        $response->assertSee($survey->title);
+        $response->assertSee($survey->title)
+            ->assertSee($survey->begins_in)
+            ->assertSee($survey->expires_in);
     }
 }

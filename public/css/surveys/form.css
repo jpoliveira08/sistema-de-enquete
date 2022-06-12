@@ -1,0 +1,36 @@
+.form-box {
+	padding: 10px 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-box-buttons {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-box label {
+    display: none;
+}
+
+.form-box input {
+    flex-basis: 100%;
+}
+
+@media all and (min-width: 500px) {
+    .form-box label {
+       display: block; 
+    }
+}
+
+@media all and (min-width: 600px) {
+    .form-box {
+        flex-direction: row;
+    }
+    .form-box label {
+        flex-basis: 100px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}

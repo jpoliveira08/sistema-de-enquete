@@ -29,7 +29,7 @@ class SurveyTest extends TestCase
             '/surveys', $data
         );
 
-        $response->assertStatus(201);
+        $response->assertRedirect(route('surveys.index'));
 
         $this->assertDatabaseHas('surveys', [
             'title' => $survey->title,

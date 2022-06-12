@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('survey_id')->constrained()
                 ->onDelete('cascade');
             $table->string('name');
-            $table->unsignedBigInteger('amount_of_votes');
+            $table->unsignedBigInteger('amount_of_votes')->nullable();
             $table->timestamps();
         });
     }

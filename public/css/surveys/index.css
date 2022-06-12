@@ -2,6 +2,7 @@ body {
 	margin-top: 0;
 	background-color: #eddcd2;
 	font-family: Arial, Helvetica, sans-serif;
+	color: black;
 }
 
 button {
@@ -16,18 +17,6 @@ main {
 	background: white;
 	border-style: none solid;
 	border-color: black;
-}
-
-.form-box {
-	padding: 10px 10px;
-	display: flex;
-	flex-direction: column;
-}
-
-.form-box-buttons {
-	padding: 10px 10px;
-	display: flex;
-	justify-content: flex-end;
 }
 
 .page-header {
