@@ -60,13 +60,9 @@
             </div>
         @enderror
 
-        <div class="form-box-buttons">
-            <button class="btn btn-primary" onclick="addNewOptionToTheSurvey()" type="button">Nova opção</button>
-            <div>
-                <a href="{{ route('surveys.index') }}" class="btn btn-danger">Cancelar</a>
-                <button class="btn btn-success" type="submit">Salvar</button>
-            </div>
+        <div class="form-edit-box-buttons">
+            <a href="{{ route('surveys.index') }}" class="btn btn-danger">Cancelar</a>
+            <button class="btn btn-success" type="submit">Salvar</button>
         </div>
     </form>
 </x-layout>
-<script src="{{ asset('js/surveys/form.js')}}"></script>

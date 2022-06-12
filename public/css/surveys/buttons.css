@@ -8,6 +8,15 @@
     transition-duration: 0.2s;
 }
 
+td form {
+    display: inline-block;
+}
+
+button {
+    border: none;
+	cursor: pointer;
+}
+
 a.btn {
     text-decoration: none;
     color: inherit;
@@ -47,4 +56,16 @@ a.btn {
 
 .btn-info {
     background: #8d99ae;
+}
+
+.form-edit-box-buttons {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.form-box-buttons {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: space-between;
 }

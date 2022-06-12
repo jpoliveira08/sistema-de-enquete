@@ -29,7 +29,11 @@
                     <td>{{ $survey->expires_in }}</td>
                     <td>
                         <a class="btn btn-warning" href="{{ route('surveys.edit', $survey->id) }}">Editar</a>
-                        <a class="btn btn-danger" href="">Excluir</a>
+                        <form action="{{ route('surveys.destroy', $survey->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

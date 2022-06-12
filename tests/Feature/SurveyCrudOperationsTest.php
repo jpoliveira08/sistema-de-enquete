@@ -89,5 +89,43 @@ class SurveyCrudOperationsTest extends TestCase
                 'expires_in' => $newSurvey->expires_in
             ]
         );
+
+        foreach ($newOptions as $newOption) {
+            $this->assertDatabaseHas(
+                'options', [
+                    'name' => $newOption->name
+                ]
+            );
+        }
+    }
+
+    /** @test */
+    public function it_can_delete_a_survey()
+    {
+        $survey = Survey::factory()->create();
+
+        $options = Option::factory(3)->state([
+            'survey_id' => $survey->id
+        ])->create();
+
+        $response = $this->deleteJson("surveys/$survey->id");
+
+        $response->assertRedirect(route('surveys.index'));
+
+        $this->assertDatabaseMissing(
+            'surveys', [
+                'title' => $survey->title,
+                'begins_in' => $survey->begins_in,
+                'expires_in' => $survey->expires_in
+            ]
+        );
+
+        foreach ($options as $option) {
+            $this->assertDatabaseMissing(
+                'options', [
+                    'name' => $option->name
+                ]
+            );
+        }
     }
 }

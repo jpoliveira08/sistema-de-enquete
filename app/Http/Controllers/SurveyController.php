@@ -50,4 +50,11 @@ class SurveyController extends Controller
 
         return redirect('surveys');
     }
+
+    public function destroy(Survey $survey)
+    {
+        $this->surveyRepository->deleteSurvey($survey);
+
+        return redirect('surveys');
+    }
 }
