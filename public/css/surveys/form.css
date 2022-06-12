@@ -34,3 +34,11 @@
         flex-shrink: 0;
     }
 }
+
+.error-message {
+    color: red;
+}
+
+.error-input-border {
+    border: 1px solid #FF0000;
+}

@@ -35,6 +35,6 @@ class MinOptionsRule implements Rule
      */
     public function message()
     {
-        return 'The survey needs to have at least 3 options.';
+        return 'A enquete deve possuir no mínimo 3 opções.';
     }
 }

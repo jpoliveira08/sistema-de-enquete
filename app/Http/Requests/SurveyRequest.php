@@ -28,8 +28,22 @@ class SurveyRequest extends FormRequest
             'header.title' => ['required', 'string'],
             'header.begins_in' => ['required', 'date'],
             'header.expires_in' => ['required', 'date', 'after:header.begins_in'],
-            'options.*.name' => ['required', 'string'],
+            'options.*.name' => ['required'],
             'options' => [new MinOptionsRule()],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'header.title.required' => 'A enquete deve possuir um título.',
+            'header.title.string' => 'O título da enquete deve ser em formato de texto.',
+            'header.begins_in.required' => 'A enquete deve possuir uma data inicial.',
+            'header.begins_in.date' => 'A data inicial deve ser em formato de data.',
+            'header.expires_in.required' => 'A enquete deve possuir uma data final.',
+            'header.expires_in.date' => 'A data final deve ser em formato de data.',
+            'header.expires_in.after' => 'A data final deve ser maior que a data inicial.',
+            'options.*.name.required' => 'Todas opções devem ser preenchidas.'
         ];
     }
 }
