@@ -27,4 +27,9 @@ class SurveyRepository implements SurveyRepositoryInterface
     {
         return Survey::all();
     }
+
+    public function updateSurvey(Survey $surveyModel, array $newSurveyData)
+    {
+        $survey = $surveyModel->update($newSurveyData['header']);
+    }
 }

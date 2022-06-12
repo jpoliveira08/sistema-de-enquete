@@ -1,13 +1,16 @@
-<x-layout title="Nova Enquete">
+<x-layout title="Editando enquete">
     <div class="page-header">
-        <h1>Nova enquete</h1>
+        <h1>Editando enquete {{ $survey->id }}</h1>
     </div>
-    
-    <form action="{{ route('surveys.store') }}" method="POST">
+
+    <form action="{{ route('surveys.update', $survey->id) }}" method="POST">
         @csrf
+        @method('PUT')
+
         <div class="form-box">
             <label for="title">Título</label>
             <input type="text" name="header[title]" placeholder="Título da enquete"
+                value="{{ old('header[title]', $survey->title) }}"
                 @if ($errors->has('header.title'))
                     class="error-input-border"
                 @endif>
@@ -18,26 +21,22 @@
             </div>
         @enderror
 
-        <div class="form-box">
-            <label for="begins_in">Inicia em</label>
-            <input type="date" name="header[begins_in]" placeholder="Data de início"
-                @if ($errors->has('header.begins_in'))
-                    class="error-input-border"
-                @endif>
-        </div>
+        <input type="hidden" name="header[begins_in]" placeholder="Data de início"
+        value="{{ old('header[begins_in]', $survey->begins_in) }}"
+            @if ($errors->has('header.begins_in'))
+                class="error-input-border"
+            @endif>
         @error('header.begins_in')
             <div class="form-box error-message">
                 {{ $message }}
             </div>
         @enderror
 
-        <div class="form-box">
-            <label for="expires_in">Termina em</label>
-            <input type="date" name="header[expires_in]" placeholder="Data final"
-                @if ($errors->has('header.expires_in'))
-                    class="error-input-border"
-                @endif>
-        </div>
+        <input type="hidden" name="header[expires_in]" placeholder="Data final"
+        value="{{ old('header[expires_in]', $survey->expires_in) }}"
+            @if ($errors->has('header.expires_in'))
+                class="error-input-border"
+            @endif>
         @error('header.expires_in')
             <div class="form-box error-message">
                 {{ $message }}
@@ -45,20 +44,13 @@
         @enderror
 
         <div id="form-box-options">
-            <div class="form-box">
-                <label for="options[][name]">Opção 1</label>
-                <input type="text" name="options[][name]" placeholder="Opção 1">
-            </div>
-            
-            <div class="form-box">
-                <label for="options[][name]">Opção 2</label>
-                <input type="text" name="options[][name]" placeholder="Opção 2">
-            </div>
-            
-            <div class="form-box">
-                <label for="options[][name]">Opção 3</label>
-                <input type="text" name="options[][name]" placeholder="Opção 3">
-            </div>
+            @for ($i = 0; $i < count($options); $i++)
+                <div class="form-box">
+                    <label for="options[][name]">Opção {{ $i + 1 }}</label>
+                    <input type="text" name="options[][name]" placeholder="Opção {{ $i + 1 }}"
+                        value="{{ old('options[][name]', $options[$i]->name) }}">
+                </div>
+            @endfor
         </div>
         @error('options.*')
             <div class="form-box error-message">

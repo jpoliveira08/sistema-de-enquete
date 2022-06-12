@@ -10,4 +10,5 @@ interface SurveyRepositoryInterface
 {
     public function createSurvey(array $survey);
     public function getAllSurveys();
+    public function updateSurvey(Survey $surveyModel, array $newSurveyData);
 }

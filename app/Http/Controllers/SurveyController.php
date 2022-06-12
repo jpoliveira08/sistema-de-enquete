@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SurveyRequest;
 use App\Interfaces\SurveyRepositoryInterface;
-use Illuminate\Http\JsonResponse;
+use App\Models\{Option, Survey};
 
 class SurveyController extends Controller
 {
@@ -33,5 +33,21 @@ class SurveyController extends Controller
     public function create()
     {
         return view('surveys.create');
+    }
+
+    public function edit(Survey $survey)
+    {
+        $options = Option::whereBelongsTo($survey)->get();
+
+        return view('surveys.edit')
+            ->with('survey', $survey)
+            ->with('options', $options);
+    }
+
+    public function update(Survey $survey ,SurveyRequest $request)
+    {
+        $this->surveyRepository->updateSurvey($survey, $request->all());
+
+        return redirect('surveys');
     }
 }

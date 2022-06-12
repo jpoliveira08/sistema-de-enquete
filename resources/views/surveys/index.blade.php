@@ -26,10 +26,9 @@
                         <a href="">{{ $survey->title }}</a>
                     </td>
                     <td>{{ $survey->begins_in }}</td>
-
                     <td>{{ $survey->expires_in }}</td>
                     <td>
-                        <a class="btn btn-warning" href="">Editar</a>
+                        <a class="btn btn-warning" href="{{ route('surveys.edit', $survey->id) }}">Editar</a>
                         <a class="btn btn-danger" href="">Excluir</a>
                     </td>
                 </tr>
