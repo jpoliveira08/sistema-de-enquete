@@ -12,4 +12,5 @@ interface SurveyRepositoryInterface
     public function getAllSurveys();
     public function updateSurvey(Survey $surveyModel, array $newSurveyData);
     public function deleteSurvey(Survey $surveyModel);
+    public function getAllOptionsFromASurvey(Survey $surveyModel);
 }

@@ -112,4 +112,25 @@ class SurveyTest extends TestCase
 
         $response->assertStatus(422);
     }
+
+    /** @test */
+    public function it_can_show_a_survey_with_options()
+    {
+        $survey = Survey::factory()->create();
+
+        $options = Option::factory(3)->state([
+            'survey_id' => $survey->id
+        ])->create();
+        
+        $response = $this->get("/surveys/$survey->id/options");
+
+        $response->assertStatus(200);
+
+        $response->assertSee($survey->title);
+        
+        foreach ($options as $option) {
+            $response->assertSee($option->name)
+                ->assertSee($option->id);
+        };
+    }
 }

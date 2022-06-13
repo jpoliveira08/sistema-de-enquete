@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OptionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SurveyController;
 /*
@@ -19,4 +20,6 @@ Route::get('/', function () {
 
 
 Route::resource('/surveys', SurveyController::class)
-    ->except('index, create, show, edit, update, destroy');
+    ->except(['show']) ;
+
+Route::get('/surveys/{id}/options', [OptionController::class, 'show'])->name('options.show');

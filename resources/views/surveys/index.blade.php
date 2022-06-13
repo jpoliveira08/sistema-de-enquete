@@ -5,8 +5,6 @@
 
     <div class="action-buttons">
         <a href="{{ route('surveys.create') }}" class="btn btn-primary">Nova enquete</a>
-    
-        <a href="" class="btn btn-info">Filtrar</a>
     </div>
 
     <div class="surveys-table">
@@ -22,12 +20,11 @@
             <tbody>
                 @foreach($surveys as $survey)
                 <tr>
-                    <td class="column-title">
-                        <a href="">{{ $survey->title }}</a>
-                    </td>
+                    <td class="column-title">{{ $survey->title }}</td>
                     <td>{{ $survey->begins_in }}</td>
                     <td>{{ $survey->expires_in }}</td>
                     <td>
+                        <a class="btn btn-primary" href="{{ route('options.show', $survey->id) }}">Votar</a>
                         <a class="btn btn-warning" href="{{ route('surveys.edit', $survey->id) }}">Editar</a>
                         <form action="{{ route('surveys.destroy', $survey->id) }}" method="POST">
                             @csrf

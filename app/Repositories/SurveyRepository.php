@@ -44,4 +44,9 @@ class SurveyRepository implements SurveyRepositoryInterface
     {
         return $surveyModel->delete();
     }
+
+    public function getAllOptionsFromASurvey(Survey $surveyModel)
+    {
+        return $surveyModel->options()->get();
+    }
 }

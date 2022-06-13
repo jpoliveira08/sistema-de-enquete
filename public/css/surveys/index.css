@@ -1,6 +1,6 @@
 body {
 	margin-top: 0;
-	background-color: #eddcd2;
+	background-color: #6DD5FA;
 	font-family: Arial, Helvetica, sans-serif;
 	color: black;
 }
@@ -11,7 +11,7 @@ main {
 	height: 100vh;
 	background: white;
 	border-style: none solid;
-	border-color: black;
+	border-color: #2C5364;
 }
 
 .page-header {
@@ -21,6 +21,25 @@ main {
 
 .action-buttons {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
+	padding-left: 20px;
+}
+
+.card {
+	margin-top: 100px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	width: 80%;
+	max-width: 650px;
+	height: 40%;
+	max-height: 800px;
+	word-wrap: break-word;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.card button {
+	margin-bottom: 5px;
 }
 
