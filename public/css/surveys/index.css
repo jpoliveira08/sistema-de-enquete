@@ -43,3 +43,6 @@ main {
 	margin-bottom: 5px;
 }
 
+.card form {
+	max-width:100%;
+}

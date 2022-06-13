@@ -15,7 +15,7 @@ use App\Http\Controllers\SurveyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('surveys');
 });
 
 
@@ -23,3 +23,4 @@ Route::resource('/surveys', SurveyController::class)
     ->except(['show']) ;
 
 Route::get('/surveys/{id}/options', [OptionController::class, 'show'])->name('options.show');
+Route::put('/surveys/{surveyId}/vote/{optionId}', [SurveyController::class, 'vote'])->name('surveys.vote');

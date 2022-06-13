@@ -4,9 +4,11 @@
             <h2>{{ $survey->title }}</h2>
 
             @foreach ($options as $option)
-                <button type="submit" value="{{ $option->id }}" class="btn btn-success">
-                    {{ $option->name }}
-                </button>
+                <form action="{{ route('surveys.vote', ['surveyId' => $survey->id, 'optionId' => $option->id]) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-success">{{ $option->name }}</button>
+                </form>
             @endforeach
 
         </div>

@@ -57,4 +57,20 @@ class SurveyController extends Controller
 
         return redirect('surveys');
     }
+
+    public function vote(int $surveyId, int $optionId)
+    {
+        $survey = Survey::find($surveyId);
+        $option = Option::find($optionId);
+
+        $votes = $option->amount_of_votes + 1;
+
+        $option->update([
+            'amount_of_votes' => $votes
+        ]);
+
+        return view('surveys.results')
+            ->with('survey', $survey)
+            ->with('options', $survey->options()->get());
+    }
 }
